@@ -1,0 +1,26 @@
+[global_tags]
+
+[agent]
+    interval = "500ms"
+    round_interval = true
+    metric_batch_size = 1000
+    metric_buffer_limit = 10000
+    collection_jitter = "0s"
+    flush_interval = "500ms"
+    flush_jitter = "0s"
+    precision = ""
+    hostname = ""
+    omit_hostname = false
+
+[[inputs.execd]]
+
+  command = ["telegraf_nidaqmx", "--task", "Task1", "--task", "Task2", "--interval", "0.5"]
+  signal = "none"
+  restart_delay = "10s"
+  data_format = "influx"
+
+
+[[outputs.file]]
+
+  files = ["stdout"]
+  data_format = "influx"

@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "telegraf_nidaqmx"
+version = "0.1.0"
+description = "External Telegraf plugin to acquire data from NI-DAQmx Tasks"
+authors = ["pyfonics <admin@pyfonics.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+click = "^8.0.3"
+nidaqmx = "^0.5.7"
+influx-line-protocol = "^0.1.4"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
