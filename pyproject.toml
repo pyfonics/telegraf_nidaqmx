@@ -5,7 +5,7 @@ description = "External Telegraf plugin to acquire data from NI-DAQmx Tasks"
 authors = ["pyfonics <admin@pyfonics.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.6"
 click = "^8.0.3"
 nidaqmx = "^0.5.7"
 influx-line-protocol = "^0.1.4"
