@@ -8,7 +8,7 @@ External Telegraf plugin to acquire data from NI-DAQmx Tasks
 pip install --upgrade git+https://github.com/pyfonics/telegraf_nidaqmx.git
 ```
 
-This should install the CLI `telegraf_nidaqmx`. Add the executable to system PATH if required.
+This should install the CLI `telegraf-nidaqmx`. Add the executable to system PATH if required.
 
 ## Usage
 
@@ -16,25 +16,25 @@ Run the following command in a command prompt to show the help text.
 
 ```
 
-telegraf_nidaqmx --help
+telegraf-nidaqmx --help
 
 ```
 
-Once NI-DAQmx tasks have been configured in NI MAX utility, test that `telegraf_nidaqmx` can read the tasks.
+Once NI-DAQmx tasks have been configured in NI MAX utility, test that `telegraf-nidaqmx` can read the NI-DAQmx tasks.
 
 ```
-telegraf_nidaqmx --task ExampleTask1 --task ExampleTask2 --interval 1 --test
+telegraf-nidaqmx --task ExampleTask1 --task ExampleTask2 --interval 1 --test
 ```
 
 
-The Telegraf plugin [`inputs.execd`](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/execd) is used to collect data from `telegraf_nidaqmx`.
+The Telegraf plugin [`inputs.execd`](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/execd) is used to collect data from `telegraf-nidaqmx`.
 
 An example configuration is shown below:
 
 ```toml
 [[inputs.execd]]
 
-  command = ["telegraf_nidaqmx", "--task", "ExampleTask1", "--task", "ExampleTask2", "--interval", "0.5"]
+  command = ["telegraf-nidaqmx", "--task", "ExampleTask1", "--task", "ExampleTask2", "--interval", "0.5"]
   signal = "none"
   restart_delay = "10s"
   data_format = "influx"
