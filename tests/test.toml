@@ -14,7 +14,7 @@
 
 [[inputs.execd]]
 
-  command = ["telegraf_nidaqmx", "--task", "Task1", "--task", "Task2", "--interval", "0.5"]
+  command = ["telegraf-nidaqmx", "--task", "Task1", "--task", "Task2", "--interval", "0.5"]
   signal = "none"
   restart_delay = "10s"
   data_format = "influx"
